@@ -1,11 +1,17 @@
 package br.com.portifolio.lucasvini.projectsaude.model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-@Embeddable
+@Entity
 public class EspecialidadeDoProfissional {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 //	private Profissional profissional;
 	@OneToOne
 	private Especialidade especialidade;
@@ -33,6 +39,10 @@ public class EspecialidadeDoProfissional {
 
 	public void setExperienciaEmAnos(Integer experienciaEmAnos) {
 		this.experienciaEmAnos = experienciaEmAnos;
+	}
+
+	public Long getId() {
+		return id;
 	}
 	
 }

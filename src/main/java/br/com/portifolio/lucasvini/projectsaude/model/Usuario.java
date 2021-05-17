@@ -3,7 +3,6 @@ package br.com.portifolio.lucasvini.projectsaude.model;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,18 +25,19 @@ public class Usuario {
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataCadastro = LocalDate.now();
 	private StatusEnum status;
-	@ElementCollection
+	@ManyToMany
 	private List<EspecialidadeDoProfissional> listaEspecialidades;
 	@ManyToMany
 	private List<Perfil> listaPerfis;
-	private Documento documentos;
+	@ManyToMany
+	private List<Documento> documentos;
 	
 	public Usuario() {
 	}
 
 	public Usuario(String nome, String sobrenome, String email, LocalDate dataNascimento, LocalDate dataCadastro,
 			StatusEnum status, List<EspecialidadeDoProfissional> listaEspecialidades, List<Perfil> listaPerfis,
-			Documento documentos) {
+			List<Documento> documentos) {
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
@@ -97,14 +97,14 @@ public class Usuario {
 		this.status = status;
 	}
 
-	public Documento getDocumentos() {
+	public List<Documento> getDocumentos() {
 		return documentos;
 	}
 
-	public void setDocumentos(Documento documentos) {
+	public void setDocumentos(List<Documento> documentos) {
 		this.documentos = documentos;
 	}
-	
+
 	public List<EspecialidadeDoProfissional> getListaEspecialidades() {
 		return listaEspecialidades;
 	}

@@ -1,10 +1,19 @@
 package br.com.portifolio.lucasvini.projectsaude.model;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Embeddable
+@Entity
 public class Documento {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Enumerated(EnumType.STRING)
 	private TipoDocumentoEnum tipoDocumento;
 	private String numeroDocumento;
 	
@@ -30,6 +39,10 @@ public class Documento {
 
 	public void setNumeroDocumento(String numeroDocumento) {
 		this.numeroDocumento = numeroDocumento;
+	}
+
+	public Long getId() {
+		return id;
 	}
 	
 }

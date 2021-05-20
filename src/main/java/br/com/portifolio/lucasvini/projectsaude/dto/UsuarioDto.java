@@ -9,8 +9,10 @@ import br.com.portifolio.lucasvini.projectsaude.model.EspecialidadeDoProfissiona
 import br.com.portifolio.lucasvini.projectsaude.model.Perfil;
 import br.com.portifolio.lucasvini.projectsaude.model.StatusEnum;
 
-public class UsuarioDto implements Serializable{
+public class UsuarioDto implements IUsuario, Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String nome;
 	private String sobrenome;
@@ -19,7 +21,7 @@ public class UsuarioDto implements Serializable{
 	private LocalDate dataCadastro = LocalDate.now();
 	private StatusEnum status;
 	private List<EspecialidadeDoProfissional> listaEspecialidades;
-	private List<Perfil> listaPerfis;
+	private Perfil Perfil;
 	private List<Documento> documentos;
 	
 	public void setNome(String nome) {
@@ -28,10 +30,6 @@ public class UsuarioDto implements Serializable{
 	
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public void setEmail(String email) {
@@ -54,11 +52,60 @@ public class UsuarioDto implements Serializable{
 		this.listaEspecialidades = listaEspecialidades;
 	}
 
-	public void setListaPerfis(List<Perfil> listaPerfis) {
-		this.listaPerfis = listaPerfis;
+	public void setPerfil(Perfil perfil) {
+		Perfil = perfil;
 	}
 
 	public void setDocumentos(List<Documento> documentos) {
 		this.documentos = documentos;
 	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public LocalDate getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public StatusEnum getStatus() {
+		return status;
+	}
+
+	public List<EspecialidadeDoProfissional> getListaEspecialidades() {
+		return listaEspecialidades;
+	}
+
+	public Perfil getPerfil() {
+		return Perfil;
+	}
+
+	public List<Documento> getDocumentos() {
+		return documentos;
+	}
+	
 }

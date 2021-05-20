@@ -4,12 +4,13 @@ import br.com.portifolio.lucasvini.projectsaude.dto.UsuarioDto;
 
 public abstract class UsuarioDtoBuilder {
 
-	protected UsuarioDto usuario;
+	protected UsuarioDto dto;
 	
 	public UsuarioDtoBuilder() {
-		usuario = new UsuarioDto();
+		dto = new UsuarioDto();
 	}
 	
+	public abstract void buildId();
 	public abstract void buildName();
 	public abstract void buildSobrenome();
 	public abstract void buildEmail();
@@ -20,7 +21,7 @@ public abstract class UsuarioDtoBuilder {
 	public abstract void buildDocumentos();
 	
 	public UsuarioDto get() {
-		return usuario;
+		return dto;
 	}
 	
 }

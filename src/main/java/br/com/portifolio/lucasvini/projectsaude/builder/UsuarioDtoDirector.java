@@ -1,6 +1,6 @@
 package br.com.portifolio.lucasvini.projectsaude.builder;
 
-import br.com.portifolio.lucasvini.projectsaude.dto.UsuarioDto;
+import br.com.portifolio.lucasvini.projectsaude.dto.IUsuario;
 
 public class UsuarioDtoDirector {
 	
@@ -12,6 +12,7 @@ public class UsuarioDtoDirector {
 	}
 	
 	public void build() {
+		usuario.buildId();
 		usuario.buildName();
 		usuario.buildSobrenome();
 		usuario.buildEmail();
@@ -22,7 +23,7 @@ public class UsuarioDtoDirector {
 		usuario.buildDocumentos();
 	}
 	
-	public UsuarioDto get() {
+	public IUsuario get() {
 		return usuario.get();
 	}
 	

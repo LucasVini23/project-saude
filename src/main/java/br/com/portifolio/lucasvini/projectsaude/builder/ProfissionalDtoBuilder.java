@@ -9,52 +9,58 @@ public class ProfissionalDtoBuilder extends UsuarioDtoBuilder {
 	
 	public ProfissionalDtoBuilder(Usuario usuario) {
 		this.usuarioBean = usuario;
+		this.dto = new ProfissionalDto();
+	}
+	
+	@Override
+	public void buildId() {
+		this.dto.setId(this.usuarioBean.getId());
 	}
 
 	@Override
 	public void buildName() {
-		this.usuario.setNome(this.usuarioBean.getNome());
+		this.dto.setNome(this.usuarioBean.getNome());
 	}
 
 	@Override
 	public void buildSobrenome() {
-		this.usuario.setSobrenome(this.usuarioBean.getSobrenome());
+		this.dto.setSobrenome(this.usuarioBean.getSobrenome());
 	}
 
 
 	@Override
 	public void buildEmail() {
-		this.usuario.setEmail(this.usuarioBean.getEmail());
+		this.dto.setEmail(this.usuarioBean.getEmail());
 	}
 
 	@Override
 	public void buildDataNascimento() {
-		this.usuario.setDataNascimento(this.usuarioBean.getDataNascimento());
+		this.dto.setDataNascimento(this.usuarioBean.getDataNascimento());
 	}
 
 	@Override
 	public void buildStatus() {
-		this.usuario.setStatus(this.usuarioBean.getStatus());
+		this.dto.setStatus(this.usuarioBean.getStatus());
 	}
 
 	@Override
 	public void buildListaEspecialidades() {
-		this.usuario.setListaEspecialidades(this.usuarioBean.getListaEspecialidades());
+		this.dto.setListaEspecialidades(this.usuarioBean.getListaEspecialidades());
 	}
 
 	@Override
 	public void buildPerfil() {
-		this.usuario.setListaPerfis(this.usuarioBean.getListaPerfis());
+		this.dto.setPerfil(this.usuarioBean.getListaPerfis().get(0));
 	}
 
 	@Override
 	public void buildDocumentos() {
-		this.usuario.setDocumentos(this.usuarioBean.getDocumentos());
+		this.dto.setDocumentos(this.usuarioBean.getDocumentos());
 	}
 	
 	@Override
 	public ProfissionalDto get() {
-		return (ProfissionalDto) usuario;
+		return (ProfissionalDto) dto;
 	}
 
 }

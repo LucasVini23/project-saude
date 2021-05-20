@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.portifolio.lucasvini.projectsaude.builder.ProfissionalDtoBuilder;
+import br.com.portifolio.lucasvini.projectsaude.builder.UsuarioDtoDirector;
 import br.com.portifolio.lucasvini.projectsaude.dto.ProfissionalDto;
 import br.com.portifolio.lucasvini.projectsaude.model.Usuario;
 import br.com.portifolio.lucasvini.projectsaude.repository.UsuarioRepository;
@@ -17,12 +18,13 @@ public class ProfissionalService {
 	@Autowired
 	private UsuarioRepository repository;
 	
-	public List<ProfissionalDto> listarTodos() {
-		List<Usuario> lista = repository.findAll();
+	public List<ProfissionalDto> listarTodos(String perfil) {
+		List<Usuario> lista = repository.findByDescricao(perfil);
 		List<ProfissionalDto> listaDto = new ArrayList<>();
 		for (Usuario usuario : lista) {
-			ProfissionalDtoBuilder profissionalBuilder = new ProfissionalDtoBuilder(usuario);
-			listaDto.add(profissionalBuilder.get());
+			UsuarioDtoDirector director = new UsuarioDtoDirector(new ProfissionalDtoBuilder(usuario));
+			director.build();
+			listaDto.add((ProfissionalDto) director.get());
 		}
 		return listaDto;
 	}

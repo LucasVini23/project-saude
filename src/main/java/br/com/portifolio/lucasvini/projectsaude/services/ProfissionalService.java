@@ -23,7 +23,7 @@ public class ProfissionalService {
 		List<ProfissionalDto> listaDto = new ArrayList<>();
 		for (Usuario usuario : lista) {
 			UsuarioDtoDirector director = new UsuarioDtoDirector(new ProfissionalDtoBuilder(usuario));
-			director.build();
+			director.build(perfil);
 			listaDto.add((ProfissionalDto) director.get());
 		}
 		return listaDto;

@@ -4,9 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
-import br.com.portifolio.lucasvini.projectsaude.model.Documento;
-import br.com.portifolio.lucasvini.projectsaude.model.EspecialidadeDoProfissional;
-import br.com.portifolio.lucasvini.projectsaude.model.Perfil;
 import br.com.portifolio.lucasvini.projectsaude.model.StatusEnum;
 
 public class UsuarioDto implements IUsuario, Serializable{
@@ -20,9 +17,9 @@ public class UsuarioDto implements IUsuario, Serializable{
 	private LocalDate dataNascimento;
 	private LocalDate dataCadastro = LocalDate.now();
 	private StatusEnum status;
-	private List<EspecialidadeDoProfissional> listaEspecialidades;
-	private Perfil Perfil;
-	private List<Documento> documentos;
+	private List<EspecialidadeDoProfissionalDto> listaEspecialidades;
+	private PerfilDto Perfil;
+	private List<DocumentoDto> documentos;
 	
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -48,15 +45,15 @@ public class UsuarioDto implements IUsuario, Serializable{
 		this.status = status;
 	}
 
-	public void setListaEspecialidades(List<EspecialidadeDoProfissional> listaEspecialidades) {
+	public void setListaEspecialidades(List<EspecialidadeDoProfissionalDto> listaEspecialidades) {
 		this.listaEspecialidades = listaEspecialidades;
 	}
 
-	public void setPerfil(Perfil perfil) {
+	public void setPerfil(PerfilDto perfil) {
 		Perfil = perfil;
 	}
 
-	public void setDocumentos(List<Documento> documentos) {
+	public void setDocumentos(List<DocumentoDto> documentos) {
 		this.documentos = documentos;
 	}
 
@@ -96,15 +93,15 @@ public class UsuarioDto implements IUsuario, Serializable{
 		return status;
 	}
 
-	public List<EspecialidadeDoProfissional> getListaEspecialidades() {
+	public List<EspecialidadeDoProfissionalDto> getListaEspecialidades() {
 		return listaEspecialidades;
 	}
 
-	public Perfil getPerfil() {
+	public PerfilDto getPerfil() {
 		return Perfil;
 	}
 
-	public List<Documento> getDocumentos() {
+	public List<DocumentoDto> getDocumentos() {
 		return documentos;
 	}
 	

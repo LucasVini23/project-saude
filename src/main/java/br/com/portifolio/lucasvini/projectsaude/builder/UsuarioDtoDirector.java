@@ -11,7 +11,7 @@ public class UsuarioDtoDirector {
 		this.usuario = usuario;
 	}
 	
-	public void build() {
+	public void build(String perfil) {
 		usuario.buildId();
 		usuario.buildName();
 		usuario.buildSobrenome();
@@ -19,7 +19,7 @@ public class UsuarioDtoDirector {
 		usuario.buildDataNascimento();
 		usuario.buildStatus();
 		usuario.buildListaEspecialidades();
-		usuario.buildPerfil();
+		usuario.buildPerfil(perfil);
 		usuario.buildDocumentos();
 	}
 	

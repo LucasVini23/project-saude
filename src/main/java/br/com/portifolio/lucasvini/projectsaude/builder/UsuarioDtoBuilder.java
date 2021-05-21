@@ -17,7 +17,7 @@ public abstract class UsuarioDtoBuilder {
 	public abstract void buildDataNascimento();
 	public abstract void buildStatus();
 	public abstract void buildListaEspecialidades();
-	public abstract void buildPerfil();
+	public abstract void buildPerfil(String perfil);
 	public abstract void buildDocumentos();
 	
 	public UsuarioDto get() {

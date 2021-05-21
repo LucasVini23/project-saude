@@ -10,11 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-
-import br.com.portifolio.lucasvini.projectsaude.dto.IUsuario;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-public class Usuario implements IUsuario {
+public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

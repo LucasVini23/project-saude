@@ -7,7 +7,7 @@ public abstract class UsuarioDtoBuilder {
 	protected UsuarioDto dto;
 	
 	public UsuarioDtoBuilder() {
-		dto = new UsuarioDto();
+		dto = new UsuarioDto(null, null, null, null, null, null, null, null, null);
 	}
 	
 	public abstract void buildId();
@@ -15,9 +15,10 @@ public abstract class UsuarioDtoBuilder {
 	public abstract void buildSobrenome();
 	public abstract void buildEmail();
 	public abstract void buildDataNascimento();
+	public abstract void buildDataCadastro();
 	public abstract void buildStatus();
 	public abstract void buildListaEspecialidades();
-	public abstract void buildPerfil(String perfil);
+	public abstract void buildPerfil();
 	public abstract void buildDocumentos();
 	
 	public UsuarioDto get() {

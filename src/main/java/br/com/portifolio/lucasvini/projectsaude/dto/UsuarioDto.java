@@ -21,6 +21,20 @@ public class UsuarioDto implements IUsuario, Serializable{
 	private PerfilDto Perfil;
 	private List<DocumentoDto> documentos;
 	
+	public UsuarioDto(String nome, String sobrenome, String email, LocalDate dataNascimento, LocalDate dataCadastro,
+			StatusEnum status, List<EspecialidadeDoProfissionalDto> listaEspecialidades, PerfilDto perfil,
+			List<DocumentoDto> documentos) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.email = email;
+		this.dataNascimento = dataNascimento;
+		this.dataCadastro = dataCadastro;
+		this.status = status;
+		this.listaEspecialidades = listaEspecialidades;
+		Perfil = perfil;
+		this.documentos = documentos;
+	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}

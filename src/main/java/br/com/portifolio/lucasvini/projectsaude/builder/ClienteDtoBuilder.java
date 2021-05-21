@@ -2,24 +2,21 @@ package br.com.portifolio.lucasvini.projectsaude.builder;
 
 import java.util.ArrayList;
 
+import br.com.portifolio.lucasvini.projectsaude.dto.ClienteDto;
 import br.com.portifolio.lucasvini.projectsaude.dto.DocumentoDto;
-import br.com.portifolio.lucasvini.projectsaude.dto.EspecialidadeDoProfissionalDto;
-import br.com.portifolio.lucasvini.projectsaude.dto.ProfissionalDto;
 import br.com.portifolio.lucasvini.projectsaude.factory.DocumentoFactory;
-import br.com.portifolio.lucasvini.projectsaude.factory.EspecialidadeDoProfissionalFactory;
 import br.com.portifolio.lucasvini.projectsaude.factory.PerfilFactory;
 import br.com.portifolio.lucasvini.projectsaude.model.Documento;
-import br.com.portifolio.lucasvini.projectsaude.model.EspecialidadeDoProfissional;
 import br.com.portifolio.lucasvini.projectsaude.model.Perfil;
 import br.com.portifolio.lucasvini.projectsaude.model.Usuario;
 
-public class ProfissionalDtoBuilder extends UsuarioDtoBuilder {
-	
+public class ClienteDtoBuilder extends UsuarioDtoBuilder {
+
 	private Usuario usuarioBean;
 	
-	public ProfissionalDtoBuilder(Usuario usuario) {
+	public ClienteDtoBuilder(Usuario usuario) {
 		this.usuarioBean = usuario;
-		this.dto = new ProfissionalDto(null, null, null, null, null, null, null, null, null);
+		this.dto = new ClienteDto(null, null, null, null, null, null, null, null, null);
 	}
 	
 	@Override
@@ -36,7 +33,6 @@ public class ProfissionalDtoBuilder extends UsuarioDtoBuilder {
 	public void buildSobrenome() {
 		this.dto.setSobrenome(this.usuarioBean.getSobrenome());
 	}
-
 
 	@Override
 	public void buildEmail() {
@@ -60,13 +56,7 @@ public class ProfissionalDtoBuilder extends UsuarioDtoBuilder {
 
 	@Override
 	public void buildListaEspecialidades() {
-		var listaEspecialidas = this.usuarioBean.getListaEspecialidades();
-		ArrayList<EspecialidadeDoProfissionalDto> listDto = new ArrayList<>();
-		for (EspecialidadeDoProfissional especialidadeDoProfissional : listaEspecialidas) {
-			EspecialidadeDoProfissionalDto dto = EspecialidadeDoProfissionalFactory.create(especialidadeDoProfissional);
-			listDto.add(dto);
-		}
-		this.dto.setListaEspecialidades(listDto);
+		
 	}
 
 	@Override
@@ -86,12 +76,7 @@ public class ProfissionalDtoBuilder extends UsuarioDtoBuilder {
 			listDto.add(dto);
 		}
 		this.dto.setDocumentos(listDto);
+		
 	}
-	
-	@Override
-	public ProfissionalDto get() {
-		return (ProfissionalDto) dto;
-	}
-
 
 }

@@ -11,19 +11,21 @@ public class UsuarioDtoDirector {
 		this.usuario = usuario;
 	}
 	
-	public void build(String perfil) {
+	public void build() {
 		usuario.buildId();
 		usuario.buildName();
 		usuario.buildSobrenome();
 		usuario.buildEmail();
 		usuario.buildDataNascimento();
+		usuario.buildDataCadastro();
 		usuario.buildStatus();
 		usuario.buildListaEspecialidades();
-		usuario.buildPerfil(perfil);
+		usuario.buildPerfil();
 		usuario.buildDocumentos();
 	}
 	
 	public IUsuario get() {
+		build();
 		return usuario.get();
 	}
 	

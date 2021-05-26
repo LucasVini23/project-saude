@@ -7,25 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.portifolio.lucasvini.projectsaude.builder.ClienteDtoBuilder;
-import br.com.portifolio.lucasvini.projectsaude.builder.UsuarioDtoDirector;
+import br.com.portifolio.lucasvini.projectsaude.builder.ClienteDtoDirector;
 import br.com.portifolio.lucasvini.projectsaude.dto.ClienteDto;
-import br.com.portifolio.lucasvini.projectsaude.model.Usuario;
-import br.com.portifolio.lucasvini.projectsaude.repository.UsuarioRepository;
+import br.com.portifolio.lucasvini.projectsaude.model.Cliente;
+import br.com.portifolio.lucasvini.projectsaude.repository.ClienteRepository;
 
 @Service
-public class ClienteService {
+public class ClienteService extends AbstractService<Cliente>{
 
 	@Autowired
-	private UsuarioRepository repository;
+	private ClienteRepository repository;
 	
 	public List<ClienteDto> listarTodos(String perfil) {
-		List<Usuario> lista = repository.findByDescricao(perfil);
+		List<Cliente> lista = repository.findByDescricao(perfil);
 		List<ClienteDto> listaDto = new ArrayList<>();
-		for (Usuario usuario : lista) {
-			UsuarioDtoDirector director = new UsuarioDtoDirector(new ClienteDtoBuilder(usuario));
+		for (Cliente cliente : lista) {
+			ClienteDtoDirector director = new ClienteDtoDirector(new ClienteDtoBuilder(cliente));
 			listaDto.add((ClienteDto) director.get());
 		}
 		return listaDto;
 	}
-	
 }

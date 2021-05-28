@@ -12,7 +12,7 @@ import javax.persistence.ManyToMany;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-public class Usuario {
+public class Profissional {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,10 +32,10 @@ public class Usuario {
 	@ManyToMany
 	private List<Documento> documentos;
 	
-	public Usuario() {
+	public Profissional() {
 	}
 
-	public Usuario(String nome, String sobrenome, String email, LocalDate dataNascimento, LocalDate dataCadastro,
+	public Profissional(String nome, String sobrenome, String email, LocalDate dataNascimento, LocalDate dataCadastro,
 			StatusEnum status, List<EspecialidadeDoProfissional> listaEspecialidades, List<Perfil> listaPerfis,
 			List<Documento> documentos) {
 		this.nome = nome;

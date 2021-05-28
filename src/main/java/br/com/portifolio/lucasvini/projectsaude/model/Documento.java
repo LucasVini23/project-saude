@@ -24,6 +24,12 @@ public class Documento {
 		this.tipoDocumento = tipoDocumento;
 		this.numeroDocumento = numeroDocumento;
 	}
+	
+	public Documento(Long id, TipoDocumentoEnum tipoDocumento, String numeroDocumento) {
+		this.id = id;
+		this.tipoDocumento = tipoDocumento;
+		this.numeroDocumento = numeroDocumento;
+	}
 
 	public TipoDocumentoEnum getTipoDocumento() {
 		return tipoDocumento;

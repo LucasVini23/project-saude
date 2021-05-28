@@ -3,7 +3,6 @@ package br.com.portifolio.lucasvini.projectsaude.dto;
 import java.time.LocalDate;
 import java.util.List;
 
-import br.com.portifolio.lucasvini.projectsaude.model.EspecialidadeDoProfissional;
 import br.com.portifolio.lucasvini.projectsaude.model.StatusEnum;
 
 public interface IUsuario {

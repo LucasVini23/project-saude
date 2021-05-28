@@ -11,56 +11,49 @@ import br.com.portifolio.lucasvini.projectsaude.factory.PerfilFactory;
 import br.com.portifolio.lucasvini.projectsaude.model.Documento;
 import br.com.portifolio.lucasvini.projectsaude.model.EspecialidadeDoProfissional;
 import br.com.portifolio.lucasvini.projectsaude.model.Perfil;
-import br.com.portifolio.lucasvini.projectsaude.model.Usuario;
+import br.com.portifolio.lucasvini.projectsaude.model.Profissional;
 
-public class ProfissionalDtoBuilder extends UsuarioDtoBuilder {
+public class ProfissionalDtoBuilder {
 	
-	private Usuario usuarioBean;
+	private Profissional profissionalBean;
+	private ProfissionalDto dto;
 	
-	public ProfissionalDtoBuilder(Usuario usuario) {
-		this.usuarioBean = usuario;
+	public ProfissionalDtoBuilder(Profissional profissional) {
+		this.profissionalBean = profissional;
 		this.dto = new ProfissionalDto(null, null, null, null, null, null, null, null, null);
 	}
 	
-	@Override
 	public void buildId() {
-		this.dto.setId(this.usuarioBean.getId());
+		this.dto.setId(this.profissionalBean.getId());
 	}
 
-	@Override
 	public void buildName() {
-		this.dto.setNome(this.usuarioBean.getNome());
+		this.dto.setNome(this.profissionalBean.getNome());
 	}
 
-	@Override
 	public void buildSobrenome() {
-		this.dto.setSobrenome(this.usuarioBean.getSobrenome());
+		this.dto.setSobrenome(this.profissionalBean.getSobrenome());
 	}
 
 
-	@Override
 	public void buildEmail() {
-		this.dto.setEmail(this.usuarioBean.getEmail());
+		this.dto.setEmail(this.profissionalBean.getEmail());
 	}
 
-	@Override
 	public void buildDataNascimento() {
-		this.dto.setDataNascimento(this.usuarioBean.getDataNascimento());
+		this.dto.setDataNascimento(this.profissionalBean.getDataNascimento());
 	}
 	
-	@Override
 	public void buildDataCadastro() {
-		this.dto.setDataCadastro(this.usuarioBean.getDataCadastro());
+		this.dto.setDataCadastro(this.profissionalBean.getDataCadastro());
 	}
 
-	@Override
 	public void buildStatus() {
-		this.dto.setStatus(this.usuarioBean.getStatus());
+		this.dto.setStatus(this.profissionalBean.getStatus());
 	}
 
-	@Override
 	public void buildListaEspecialidades() {
-		var listaEspecialidas = this.usuarioBean.getListaEspecialidades();
+		var listaEspecialidas = this.profissionalBean.getListaEspecialidades();
 		ArrayList<EspecialidadeDoProfissionalDto> listDto = new ArrayList<>();
 		for (EspecialidadeDoProfissional especialidadeDoProfissional : listaEspecialidas) {
 			EspecialidadeDoProfissionalDto dto = EspecialidadeDoProfissionalFactory.create(especialidadeDoProfissional);
@@ -69,17 +62,15 @@ public class ProfissionalDtoBuilder extends UsuarioDtoBuilder {
 		this.dto.setListaEspecialidades(listDto);
 	}
 
-	@Override
 	public void buildPerfil() {
-		var listaPerfis = this.usuarioBean.getListaPerfis();
+		var listaPerfis = this.profissionalBean.getListaPerfis();
 		for (Perfil perfilUnico : listaPerfis) {
 			this.dto.setPerfil(PerfilFactory.create(perfilUnico));
 		}
 	}
 
-	@Override
 	public void buildDocumentos() {
-		var listaDocumentosBean = this.usuarioBean.getDocumentos();
+		var listaDocumentosBean = this.profissionalBean.getDocumentos();
 		ArrayList<DocumentoDto> listDto = new ArrayList<>();
 		for (Documento documento : listaDocumentosBean) {
 			DocumentoDto dto = DocumentoFactory.create(documento);
@@ -88,9 +79,8 @@ public class ProfissionalDtoBuilder extends UsuarioDtoBuilder {
 		this.dto.setDocumentos(listDto);
 	}
 	
-	@Override
 	public ProfissionalDto get() {
-		return (ProfissionalDto) dto;
+		return dto;
 	}
 
 

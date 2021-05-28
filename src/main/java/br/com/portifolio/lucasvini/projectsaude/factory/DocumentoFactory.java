@@ -34,4 +34,8 @@ public class DocumentoFactory {
 		return new DocumentoDto(documento.getId(), documento.getTipoDocumento(), documento.getNumeroDocumento());
 	}
 	
+	public static Documento createEntity(DocumentoDto documento) {
+		return new Documento(documento.getId(), documento.getTipoDocumento(), documento.getNumeroDocumento());
+	}
+	
 }

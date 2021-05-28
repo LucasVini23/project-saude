@@ -8,6 +8,9 @@ public class DocumentoDto {
 	private TipoDocumentoEnum tipoDocumento;
 	private String numeroDocumento;
 	
+	public DocumentoDto() {
+	}
+
 	public DocumentoDto(TipoDocumentoEnum tipoDocumento) {
 		this.tipoDocumento = tipoDocumento;
 	}

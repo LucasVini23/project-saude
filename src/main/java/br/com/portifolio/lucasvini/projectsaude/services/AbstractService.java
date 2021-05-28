@@ -21,8 +21,8 @@ public abstract class AbstractService<T> {
 		return repository.findById(id);
 	}
 	
-	public T inserir(T usuario) {
-		return repository.save(usuario);
+	public T inserir(T generics) {
+		return repository.save(generics);
 	}
 	
 }

@@ -3,6 +3,8 @@ package br.com.portifolio.lucasvini.projectsaude.dto;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import br.com.portifolio.lucasvini.projectsaude.model.StatusEnum;
 
 public class ClienteDto {
@@ -11,15 +13,19 @@ public class ClienteDto {
 	private String nome;
 	private String sobrenome;
 	private String email;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataCadastro = LocalDate.now();
 	private StatusEnum status;
 	private PerfilDto perfil;
 	private List<DocumentoDto> documentos;
 	
+	public ClienteDto() {
+	}
+
 	public ClienteDto(Long id, String nome, String sobrenome, String email, LocalDate dataNascimento,
 			LocalDate dataCadastro, StatusEnum status, PerfilDto perfil, List<DocumentoDto> documentos) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;

@@ -29,6 +29,21 @@ public class Perfil {
 		this.atribuicoes = atribuicoes;
 		this.status = status;
 	}
+	
+	public Perfil(Long id, String descricao, LocalDate dataCadastro, String atribuicoes, StatusEnum status) {
+		this.id = id;
+		this.descricao = descricao;
+		this.dataCadastro = dataCadastro;
+		this.atribuicoes = atribuicoes;
+		this.status = status;
+	}
+	
+	public Perfil(String descricao, LocalDate dataCadastro, String atribuicoes, StatusEnum status) {
+		this.descricao = descricao;
+		this.dataCadastro = dataCadastro;
+		this.atribuicoes = atribuicoes;
+		this.status = status;
+	}
 
 	public String getDescricao() {
 		return descricao;

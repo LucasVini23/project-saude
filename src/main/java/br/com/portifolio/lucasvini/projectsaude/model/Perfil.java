@@ -9,7 +9,12 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Perfil {
 
 	@Id
@@ -23,12 +28,6 @@ public class Perfil {
 	
 	public Perfil() {
 	}
-
-	public Perfil(String descricao, String atribuicoes, StatusEnum status) {
-		this.descricao = descricao;
-		this.atribuicoes = atribuicoes;
-		this.status = status;
-	}
 	
 	public Perfil(Long id, String descricao, LocalDate dataCadastro, String atribuicoes, StatusEnum status) {
 		this.id = id;
@@ -36,49 +35,6 @@ public class Perfil {
 		this.dataCadastro = dataCadastro;
 		this.atribuicoes = atribuicoes;
 		this.status = status;
-	}
-	
-	public Perfil(String descricao, LocalDate dataCadastro, String atribuicoes, StatusEnum status) {
-		this.descricao = descricao;
-		this.dataCadastro = dataCadastro;
-		this.atribuicoes = atribuicoes;
-		this.status = status;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public LocalDate getDataCadastro() {
-		return dataCadastro;
-	}
-
-	public void setDataCadastro(LocalDate dataCadastro) {
-		this.dataCadastro = dataCadastro;
-	}
-
-	public String getAtribuicoes() {
-		return atribuicoes;
-	}
-
-	public void setAtribuicoes(String atribuicoes) {
-		this.atribuicoes = atribuicoes;
-	}
-
-	public StatusEnum getStatus() {
-		return status;
-	}
-
-	public void setStatus(StatusEnum status) {
-		this.status = status;
-	}
-
-	public Long getId() {
-		return id;
 	}
 	
 }

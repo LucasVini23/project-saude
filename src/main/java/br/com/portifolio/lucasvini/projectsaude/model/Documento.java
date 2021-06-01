@@ -7,7 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Documento {
 
 	@Id
@@ -30,25 +35,4 @@ public class Documento {
 		this.tipoDocumento = tipoDocumento;
 		this.numeroDocumento = numeroDocumento;
 	}
-
-	public TipoDocumentoEnum getTipoDocumento() {
-		return tipoDocumento;
-	}
-
-	public void setTipoDocumento(TipoDocumentoEnum tipoDocumento) {
-		this.tipoDocumento = tipoDocumento;
-	}
-
-	public String getNumeroDocumento() {
-		return numeroDocumento;
-	}
-
-	public void setNumeroDocumento(String numeroDocumento) {
-		this.numeroDocumento = numeroDocumento;
-	}
-
-	public Long getId() {
-		return id;
-	}
-	
 }

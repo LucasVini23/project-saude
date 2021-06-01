@@ -11,7 +11,12 @@ import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Cliente {
 
 	@Id
@@ -44,57 +49,6 @@ public class Cliente {
 		this.status = status;
 		this.listaPerfis = listaPerfis;
 		this.documentos = documentos;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getSobrenome() {
-		return sobrenome;
-	}
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
-	}
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-	public LocalDate getDataCadastro() {
-		return dataCadastro;
-	}
-	public void setDataCadastro(LocalDate dataCadastro) {
-		this.dataCadastro = dataCadastro;
-	}
-	public StatusEnum getStatus() {
-		return status;
-	}
-	public void setStatus(StatusEnum status) {
-		this.status = status;
-	}
-	public List<Perfil> getListaPerfis() {
-		return listaPerfis;
-	}
-	public void setListaPerfis(List<Perfil> listaPerfis) {
-		this.listaPerfis = listaPerfis;
-	}
-	public List<Documento> getDocumentos() {
-		return documentos;
-	}
-	public void setDocumentos(List<Documento> documentos) {
-		this.documentos = documentos;
-	}
-	public Long getId() {
-		return id;
 	}
 	
 }

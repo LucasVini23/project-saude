@@ -12,7 +12,12 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Administrador {
 
 	@Id
@@ -40,50 +45,6 @@ public class Administrador {
 		this.sobrenome = sobrenome;
 		this.email = email;
 		this.dataDeNascimento = dataDeNascimento;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public LocalDate getDataDeNascimento() {
-		return dataDeNascimento;
-	}
-
-	public void setDataDeNascimento(LocalDate dataDeNascimento) {
-		this.dataDeNascimento = dataDeNascimento;
-	}
-
-	public LocalDate getDataDeCadastro() {
-		return dataDeCadastro;
-	}
-
-	public void setDataDeCadastro(LocalDate dataDeCadastro) {
-		this.dataDeCadastro = dataDeCadastro;
 	}
 
 	@Override

@@ -3,7 +3,11 @@ package br.com.portifolio.lucasvini.projectsaude.dto;
 import java.time.LocalDate;
 
 import br.com.portifolio.lucasvini.projectsaude.model.StatusEnum;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class PerfilDto {
 
 	private Long id;
@@ -18,26 +22,6 @@ public class PerfilDto {
 		this.dataCadastro = dataCadastro;
 		this.atribuicoes = atribuicoes;
 		this.status = status;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public LocalDate getDataCadastro() {
-		return dataCadastro;
-	}
-
-	public String getAtribuicoes() {
-		return atribuicoes;
-	}
-
-	public StatusEnum getStatus() {
-		return status;
 	}
 	
 }

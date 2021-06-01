@@ -5,7 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class Especialidade {
 
 	@Id
@@ -19,17 +24,4 @@ public class Especialidade {
 	public Especialidade(String descricao) {
 		this.descricao = descricao;
 	}
-
-	public Long getId() {
-		return id;
-	}
-	
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
 }

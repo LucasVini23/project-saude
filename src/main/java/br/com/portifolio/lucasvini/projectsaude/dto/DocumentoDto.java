@@ -1,7 +1,11 @@
 package br.com.portifolio.lucasvini.projectsaude.dto;
 
 import br.com.portifolio.lucasvini.projectsaude.model.TipoDocumentoEnum;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class DocumentoDto {
 
 	private Long id;
@@ -24,18 +28,6 @@ public class DocumentoDto {
 	public DocumentoDto(TipoDocumentoEnum tipoDocumento, String numeroDocumento) {
 		this.tipoDocumento = tipoDocumento;
 		this.numeroDocumento = numeroDocumento;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public TipoDocumentoEnum getTipoDocumento() {
-		return tipoDocumento;
-	}
-
-	public String getNumeroDocumento() {
-		return numeroDocumento;
 	}
 	
 }

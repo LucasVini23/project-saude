@@ -5,7 +5,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 import br.com.portifolio.lucasvini.projectsaude.model.StatusEnum;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class UsuarioDto implements IUsuario, Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -33,90 +37,6 @@ public class UsuarioDto implements IUsuario, Serializable{
 		this.listaEspecialidades = listaEspecialidades;
 		Perfil = perfil;
 		this.documentos = documentos;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
-	public void setDataCadastro(LocalDate dataCadastro) {
-		this.dataCadastro = dataCadastro;
-	}
-
-	public void setStatus(StatusEnum status) {
-		this.status = status;
-	}
-
-	public void setListaEspecialidades(List<EspecialidadeDoProfissionalDto> listaEspecialidades) {
-		this.listaEspecialidades = listaEspecialidades;
-	}
-
-	public void setPerfil(PerfilDto perfil) {
-		Perfil = perfil;
-	}
-
-	public void setDocumentos(List<DocumentoDto> documentos) {
-		this.documentos = documentos;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public String getSobrenome() {
-		return sobrenome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public LocalDate getDataCadastro() {
-		return dataCadastro;
-	}
-
-	public StatusEnum getStatus() {
-		return status;
-	}
-
-	public List<EspecialidadeDoProfissionalDto> getListaEspecialidades() {
-		return listaEspecialidades;
-	}
-
-	public PerfilDto getPerfil() {
-		return Perfil;
-	}
-
-	public List<DocumentoDto> getDocumentos() {
-		return documentos;
 	}
 	
 }

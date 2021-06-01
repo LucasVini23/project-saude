@@ -6,7 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
 public class EspecialidadeDoProfissional {
 
 	@Id
@@ -25,24 +30,4 @@ public class EspecialidadeDoProfissional {
 		this.experienciaEmAnos = experienciaEmAnos;
 	}
 
-	public Especialidade getEspecialidade() {
-		return especialidade;
-	}
-
-	public void setEspecialidade(Especialidade especialidade) {
-		this.especialidade = especialidade;
-	}
-
-	public Integer getExperienciaEmAnos() {
-		return experienciaEmAnos;
-	}
-
-	public void setExperienciaEmAnos(Integer experienciaEmAnos) {
-		this.experienciaEmAnos = experienciaEmAnos;
-	}
-
-	public Long getId() {
-		return id;
-	}
-	
 }

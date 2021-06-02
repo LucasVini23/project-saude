@@ -36,4 +36,9 @@ public class ClienteService extends AbstractService<Cliente>{
 		return repository.save(cliente);
 	}
 	
+	public Cliente atualizar(ClienteDto dto) {
+		Cliente cliente = director.build(dto).get();
+		return repository.save(cliente);
+	}
+	
 }

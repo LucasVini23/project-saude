@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +23,7 @@ public class ClienteController {
 	@Autowired
 	private ClienteService service;
 	
-	@GetMapping("listar")
+	@GetMapping("/listar")
 	public List<ClienteDto> listarTodos(@RequestParam String perfil) {
 		return service.listarTodos(perfil);
 	}
@@ -36,5 +37,11 @@ public class ClienteController {
 	public Cliente inserir(@RequestBody Cliente cliente) {
 		return service.inserir(cliente);
 	}
+	
+	@PutMapping("/atualizar")
+	public Cliente atualizar(ClienteDto dto) {
+		return service.atualizar(dto);
+	}
+	
 	
 }

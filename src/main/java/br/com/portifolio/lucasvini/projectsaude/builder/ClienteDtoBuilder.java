@@ -48,10 +48,6 @@ public class ClienteDtoBuilder {
 		this.dto.setStatus(this.clienteBean.getStatus());
 	}
 
-	public void buildListaEspecialidades() {
-		
-	}
-
 	public void buildPerfil() {
 		var listaPerfis = this.clienteBean.getListaPerfis();
 		for (Perfil perfilUnico : listaPerfis) {

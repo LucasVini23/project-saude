@@ -17,6 +17,7 @@ public class ClienteDirector {
 	
 	public ClienteDirector build(ClienteDto dto) {
 		builder.setDto(dto);
+		builder.buildId();
 		builder.buildName();
 		builder.buildSobrenome();
 		builder.buildEmail();

@@ -31,6 +31,12 @@ public class ClienteBuilder {
 	public void setDto(ClienteDto dto) {
 		this.dto = dto;
 	}
+	
+	public void buildId() {
+		if(dto.getId() != null) {
+			this.clienteBean.setId(this.dto.getId());
+		}
+	}
 
 	public void buildName() {
 		this.clienteBean.setNome(this.dto.getNome());

@@ -26,6 +26,7 @@ public class ClienteService extends AbstractService<Cliente>{
 		List<ClienteDto> listaDto = new ArrayList<>();
 		for (Cliente cliente : lista) {
 			ClienteDtoDirector director = new ClienteDtoDirector(new ClienteDtoBuilder(cliente));
+			director.build();
 			listaDto.add(director.get());
 		}
 		return listaDto;

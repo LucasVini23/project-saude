@@ -26,7 +26,8 @@ public class ProfissionalService extends AbstractService<Profissional>{
 		List<ProfissionalDto> listaDto = new ArrayList<>();
 		for (Profissional usuario : lista) {
 			ProfissionalDtoDirector director = new ProfissionalDtoDirector(new ProfissionalDtoBuilder(usuario));
-			listaDto.add( director.get());
+			director.build();
+			listaDto.add(director.get());
 		}
 		return listaDto;
 	}

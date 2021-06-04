@@ -20,7 +20,7 @@ public class ProfissionalDtoBuilder {
 	
 	public ProfissionalDtoBuilder(Profissional profissional) {
 		this.profissionalBean = profissional;
-		this.dto = new ProfissionalDto(null, null, null, null, null, null, null, null, null);
+		dto = new ProfissionalDto();
 	}
 	
 	public void buildId() {

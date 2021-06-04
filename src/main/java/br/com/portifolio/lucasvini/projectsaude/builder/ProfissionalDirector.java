@@ -24,6 +24,7 @@ public class ProfissionalDirector {
 		builder.buildDataNascimento();
 		builder.buildDataCadastro();
 		builder.buildStatus();
+		builder.buildListaEspecialidades();
 		builder.buildPerfil();
 		builder.buildDocumentos();
 		return this;

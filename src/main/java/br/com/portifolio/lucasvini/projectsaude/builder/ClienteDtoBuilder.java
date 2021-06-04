@@ -17,7 +17,7 @@ public class ClienteDtoBuilder {
 	
 	public ClienteDtoBuilder(Cliente cliente) {
 		this.clienteBean = cliente;
-		this.dto = new ClienteDto(null, null, null, null, null, null, null, null, null);
+		dto = new ClienteDto();
 	}
 	
 	public void buildId() {

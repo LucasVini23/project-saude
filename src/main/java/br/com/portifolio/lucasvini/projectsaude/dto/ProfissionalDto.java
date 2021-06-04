@@ -3,6 +3,8 @@ package br.com.portifolio.lucasvini.projectsaude.dto;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import br.com.portifolio.lucasvini.projectsaude.model.StatusEnum;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +17,9 @@ public class ProfissionalDto {
 	private String nome;
 	private String sobrenome;
 	private String email;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataNascimento;
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataCadastro = LocalDate.now();
 	private StatusEnum status;
 	private List<EspecialidadeDoProfissionalDto> listaEspecialidades;

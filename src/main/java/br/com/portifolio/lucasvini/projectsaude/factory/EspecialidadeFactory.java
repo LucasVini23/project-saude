@@ -9,4 +9,8 @@ public class EspecialidadeFactory {
 		return new EspecialidadeDto(especialidade.getId(), especialidade.getDescricao());
 	}
 	
+	public static Especialidade createEntity(EspecialidadeDto dto) {
+		return new Especialidade(dto.getId(), dto.getDescricao());
+	}
+	
 }

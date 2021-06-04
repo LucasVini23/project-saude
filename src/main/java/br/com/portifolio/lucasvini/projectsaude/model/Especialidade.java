@@ -17,11 +17,16 @@ public class Especialidade {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String descricao;
-	
+
 	public Especialidade() {
 	}
 	
 	public Especialidade(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public Especialidade(Long id, String descricao) {
+		this.id = id;
 		this.descricao = descricao;
 	}
 }

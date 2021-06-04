@@ -22,6 +22,9 @@ public class ProfissionalDto {
 	private PerfilDto Perfil;
 	private List<DocumentoDto> documentos;
 	
+	public ProfissionalDto() {
+	}
+	
 	public ProfissionalDto(String nome, String sobrenome, String email, LocalDate dataNascimento,
 			LocalDate dataCadastro, StatusEnum status, List<EspecialidadeDoProfissionalDto> listaEspecialidades,
 			PerfilDto perfil, List<DocumentoDto> documentos) {

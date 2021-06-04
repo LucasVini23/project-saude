@@ -30,4 +30,10 @@ public class EspecialidadeDoProfissional {
 		this.experienciaEmAnos = experienciaEmAnos;
 	}
 
+	public EspecialidadeDoProfissional(Long id, Especialidade especialidade, Integer experienciaEmAnos) {
+		this.id = id;
+		this.especialidade = especialidade;
+		this.experienciaEmAnos = experienciaEmAnos;
+	}
+	
 }
